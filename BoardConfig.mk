@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/shinano/kernel-headers
+# PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/shinano/kernel-headers
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -33,12 +33,12 @@ BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
-BOARD_KERNEL_BOOTIMG := true
-BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
+# BOARD_KERNEL_BOOTIMG := true
+# BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --dt_dir $(OUT)/dtbs
+# BOARD_MKBOOTIMG_ARGS += --dt_dir $(OUT)/dtbs
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=shinano androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=shinano
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
 BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8
@@ -104,7 +104,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 TARGET_SYSTEM_PROP := device/sony/shinano/system.prop
 
 # NFC
-NFC_NXP_CHIP_TYPE := PN547C2
+# NFC_NXP_CHIP_TYPE := PN547C2
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -114,8 +114,8 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT ?= true
 endif
 
-BUILD_KERNEL := true
--include vendor/sony/kernel/KernelConfig.mk
+# BUILD_KERNEL := true
+# -include vendor/sony/kernel/KernelConfig.mk
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
