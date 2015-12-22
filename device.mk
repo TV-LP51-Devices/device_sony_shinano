@@ -197,8 +197,8 @@ PRODUCT_PACKAGES += \
     libemoji
 
 # BoringSSL hacks
-PRODUCT_PACKAGES += \
-    libboringssl-compat
+# PRODUCT_PACKAGES += \
+#     libboringssl-compat
 
 # APN list
 PRODUCT_COPY_FILES += \
